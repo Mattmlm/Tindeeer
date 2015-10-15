@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8404811A1BCF48D9007A693E /* DraggableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840481191BCF48D9007A693E /* DraggableImageView.swift */; settings = {ASSET_TAGS = (); }; };
+		8404811C1BCF48FE007A693E /* DraggableImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8404811B1BCF48FE007A693E /* DraggableImageView.xib */; settings = {ASSET_TAGS = (); }; };
+		8404811F1BCF4F51007A693E /* Int+DegreeToRadians.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8404811E1BCF4F51007A693E /* Int+DegreeToRadians.swift */; settings = {ASSET_TAGS = (); }; };
 		F1A6ED381BCF40F800452432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6ED371BCF40F800452432 /* AppDelegate.swift */; };
 		F1A6ED3A1BCF40F800452432 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A6ED391BCF40F800452432 /* ViewController.swift */; };
 		F1A6ED3D1BCF40F800452432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1A6ED3B1BCF40F800452432 /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840481191BCF48D9007A693E /* DraggableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableImageView.swift; sourceTree = "<group>"; };
+		8404811B1BCF48FE007A693E /* DraggableImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DraggableImageView.xib; sourceTree = "<group>"; };
+		8404811E1BCF4F51007A693E /* Int+DegreeToRadians.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+DegreeToRadians.swift"; sourceTree = "<group>"; };
 		F1A6ED341BCF40F800452432 /* Tindeeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindeeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A6ED371BCF40F800452432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A6ED391BCF40F800452432 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8404811D1BCF4ED4007A693E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8404811E1BCF4F51007A693E /* Int+DegreeToRadians.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		F1A6ED2B1BCF40F800452432 = {
 			isa = PBXGroup;
 			children = (
@@ -54,7 +68,10 @@
 		F1A6ED361BCF40F800452432 /* Tindeeer */ = {
 			isa = PBXGroup;
 			children = (
+				8404811D1BCF4ED4007A693E /* Util */,
 				F1A6ED371BCF40F800452432 /* AppDelegate.swift */,
+				840481191BCF48D9007A693E /* DraggableImageView.swift */,
+				8404811B1BCF48FE007A693E /* DraggableImageView.xib */,
 				F1A6ED391BCF40F800452432 /* ViewController.swift */,
 				F1A6ED3B1BCF40F800452432 /* Main.storyboard */,
 				F1A6ED3E1BCF40F800452432 /* Assets.xcassets */,
@@ -124,6 +141,7 @@
 			files = (
 				F1A6ED421BCF40F800452432 /* LaunchScreen.storyboard in Resources */,
 				F1A6ED3F1BCF40F800452432 /* Assets.xcassets in Resources */,
+				8404811C1BCF48FE007A693E /* DraggableImageView.xib in Resources */,
 				F1A6ED3D1BCF40F800452432 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A6ED3A1BCF40F800452432 /* ViewController.swift in Sources */,
+				8404811A1BCF48D9007A693E /* DraggableImageView.swift in Sources */,
 				F1A6ED381BCF40F800452432 /* AppDelegate.swift in Sources */,
+				8404811F1BCF4F51007A693E /* Int+DegreeToRadians.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +306,7 @@
 				F1A6ED481BCF40F800452432 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

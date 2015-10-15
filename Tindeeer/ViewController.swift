@@ -11,32 +11,15 @@ import UIKit
 class ViewController: UIViewController {
   
   var initialCenter: CGPoint!
-
-  @IBOutlet weak var profileImageView: UIImageView!
   
-  @IBAction func onPanGesture(sender: UIPanGestureRecognizer) {
-    let state = sender.state
-//    let point = sender.locationInView(self.view)
-    
-    switch state {
-      case .Began:
-        initialCenter = self.profileImageView.center;
-        
-      case .Changed:
-        let translationX = sender.translationInView(self.view).x
-        profileImageView.center = CGPointMake(initialCenter.x + translationX, initialCenter.y)
-      case .Ended:
-        break
-      default:
-        break
-      }
-    
-  }
-  
+  @IBOutlet weak var profileImageView: DraggableImageView!
 
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.profileImageView.image = UIImage(named: "ryan");
   }
 
   override func didReceiveMemoryWarning() {
@@ -44,6 +27,33 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+    @IBAction func onPanGesture(sender: UIPanGestureRecognizer) {
+        let state = sender.state
+        let point = sender.locationInView(self.view)
+        
+        switch state {
+        case .Began:
+            initialCenter = self.profileImageView.center;
+            print("Gesture began at: \(point)")
+            
+        case .Changed:
+            print("Gesture changed at: \(point)")
+            let translationX = sender.translationInView(self.view).x
+            profileImageView.center = CGPointMake(initialCenter.x + translationX, initialCenter.y)
+            
+            let isTranslationLeft = translationX > 0;
+            if (isTranslationLeft) {
+                profileImageView.transform = CGAffineTransformMakeRotation(20.degreesToRadians);
+            } else {
+                profileImageView.transform = CGAffineTransformMakeRotation(-20.degreesToRadians);
+            }
+        case .Ended:
+            print("Gesture ended at: \(point)")
+            break
+        default:
+            break
+        }
 
+    }
 }
 
