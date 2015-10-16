@@ -34,21 +34,21 @@ class ViewController: UIViewController {
         switch state {
         case .Began:
             initialCenter = self.profileImageView.center;
-            print("Gesture began at: \(point)")
+//            print("Gesture began at: \(point)")
             
         case .Changed:
-            print("Gesture changed at: \(point)")
+//            print("Gesture changed at: \(point)")
             let translationX = sender.translationInView(self.view).x
             profileImageView.center = CGPointMake(initialCenter.x + translationX, initialCenter.y)
             
             let isTranslationLeft = translationX > 0;
-            if (isTranslationLeft) {
-                profileImageView.transform = CGAffineTransformMakeRotation(20.degreesToRadians);
-            } else {
-                profileImageView.transform = CGAffineTransformMakeRotation(-20.degreesToRadians);
-            }
+            let rotation = Int(translationX/20) * -1
+            print("Rotating: \(rotation.degreesToRadians)")
+            profileImageView.transform = CGAffineTransformMakeRotation(rotation.degreesToRadians);
         case .Ended:
-            print("Gesture ended at: \(point)")
+//            print("Gesture ended at: \(point)")
+            profileImageView.transform = CGAffineTransformIdentity
+            profileImageView.center = CGPointMake(initialCenter.x, initialCenter.y)
             break
         default:
             break
